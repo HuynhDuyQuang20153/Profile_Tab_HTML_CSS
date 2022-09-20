@@ -1,0 +1,172 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #f0f0f0;
+    transition: 0.5s;
+}
+
+.box{
+    position: relative;
+    width: 350px;
+    padding: 30px;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 30px 30px rgba(0,0,0,0.05);
+}
+
+.profile{
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px; /*khoang cach giua imgbox va text - khoang cach giua cac div*/
+    user-select: none;
+}
+
+.profile .imgbox{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background: #f00;
+    border-radius: 50%;
+    overflow: hidden; 
+    /*khi chen anh vao class imgbox thi se du ra cac canh goc nhon thay vi radius 50% nen phai hidden di cac phan du do*/
+}
+
+.profile .imgbox img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile .text{
+    font-weight: 500; /*Huynh Duy Quang*/
+    color: #333;
+    line-height: 1.2rem; /*1rem=16px*/
+    
+}
+
+.profile .text span{
+    font-weight: 400;
+    font-size: 0.85rem; /*Information Technology*/
+    color: #555;
+}
+
+/*------------------*/
+
+.menu{
+    position: relative;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(0,0,0,0.25);
+}
+
+.menu li{
+    list-style: none;
+    margin: 8px 0px;
+}
+
+.menu li label{
+    position: relative;
+    display: flex;
+    justify-content: space-between; /*hinh nhu no dua cai dau(span.title) o dau va cai cuoi(span.action) o cuoi*/
+}
+
+.menu li label span{
+    user-select: none;  /*ko cho click chuot vao text*/
+    cursor: pointer;    /*chuyen mui ten chuot thanh ban tay*/
+    color: rgb(86, 84, 84);
+}
+
+.menu li label span ion-icon{
+    margin-right: 10px;
+}
+
+.menu li label .action ion-icon{
+    display: block;
+}
+
+.menu li label .action{
+    position: relative;
+}
+
+#toggle{
+    position: relative;
+    display: block;
+    width: 28px;
+    height: 15px;
+    border-radius: 10px;
+    background: #ddd;
+    transition: 0.5s;
+    cursor: pointer;
+    /* box-shadow: inset 0 8px 60px rgba(0,0,0,0.1),
+                inset 0 8px 8px rgba(0,0,0,0.1),
+                inset 0 -4px 4px rgba(0,0,0,0.1); */
+}
+
+#toggle .indicator{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 11px;
+    height: 11px;
+    margin: 2px 0 0 2px;
+    background: white;
+    border-radius: 50%;
+    transform: scale(0.9);
+    transition: 0.5s;
+}
+
+#toggle.active .indicator{
+    left: 13px;
+    background: #fff;
+}
+
+#toggleDiv{
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    right: 11px;
+    background: white;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 1px solid black;
+}
+
+
+
+/*dark mode 1*/
+.menu li label .action input{
+    position: absolute;
+    left: -25px;
+}
+
+.dark{
+    background-color: black;
+  }
+
+/*dark mode 3*/
+body.active{
+    background: black;
+}
+
+#toggle.active{
+    background: rgb(49, 68, 243);
+}
+
+/*dark mode 2*/
+#toggleDiv.active{
+    background:green;
+    border: 1px solid blue;
+}

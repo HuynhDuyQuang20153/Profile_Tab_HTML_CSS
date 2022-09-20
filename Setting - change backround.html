@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body > 
+    <div class="box">
+        <!--profile-->
+        <div class="profile">
+            <!--logo-->
+            <div class="imgbox">
+                <img src="/MyPic.jpg" alt="">
+            </div>
+
+            <!--Name-->
+            <h4 class="text">Huynh Duy Quang<br>
+                <span>Information Technology</span>
+            </h4>
+        </div>
+
+
+        <!--Choice-->
+        <ul class="menu">
+            <li>
+                <label for="">
+                    <span class="title">
+                        <ion-icon name="settings-sharp"></ion-icon>
+                        Setting
+                    </span>
+                    <span class="action">
+                        <ion-icon name="chevron-forward-sharp"></ion-icon>
+                    </span>
+                </label>
+            </li>
+
+            <li>
+                <label for="">
+                    <span class="title">
+                        <ion-icon name="moon-sharp"></ion-icon>
+                        Dark Mode 1
+                    </span>
+                    <span class="action">
+                        <input type="checkbox" class="darkmode" id="darkToggle">
+                        <!-- <ion-icon name="contrast-outline" id="darkToggle"></ion-icon> -->
+                    </span>
+                </label>
+            </li>
+
+            <li>
+                <label for="">
+                    <span class="title">
+                        <ion-icon name="moon-sharp"></ion-icon>
+                        Dark Mode 2
+                    </span>
+                    <div id="toggleDiv"></div>
+                </label>
+            </li>
+
+            <li>
+                <label for="">
+                    <span class="title">
+                        <ion-icon name="moon-sharp"></ion-icon>
+                        Dark Mode 3
+                    </span>
+                    <span id="toggle" >
+                        <i class="indicator"></i>
+                    </span>
+                </label>
+            </li>
+        </ul>
+    </div>
+
+    <!--https://ionic.io/ionicons/usage-->
+    <!--installation-->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <!--https://ionic.io/ionicons--> 
+    <!--cac icon san co-->
+
+    
+    <script>
+        /*change dark mode 1*/
+        let darkToggle = document.querySelector('#darkToggle');
+        darkToggle.addEventListener('change', ()=> {
+            document.body.classList.toggle('dark');
+        })
+  
+        /*change dark mode 3*/
+        const body = document.querySelector('body');
+        const toggle = document.getElementById('toggle');
+        toggle.onclick = function(){
+            toggle.classList.toggle('active');
+            body.classList.toggle('active');
+
+        }
+
+        /*change dark mode 2*/
+        const toggleDiv = document.getElementById('toggleDiv');
+        toggleDiv.onclick = function(){
+            body.classList.toggle('active');
+            toggleDiv.classList.toggle('active');
+        }
+
+
+
+    </script>
+
+</body>
+</html>
